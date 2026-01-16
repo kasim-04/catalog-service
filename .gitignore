@@ -1,0 +1,52 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.env
+.venv/
+venv/
+
+# ======================
+# Pytest / coverage
+# ======================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ======================
+# Alembic
+# ======================
+# (миграции коммитим, но кеш нет)
+alembic/versions/__pycache__/
+
+# ======================
+# Docker
+# ======================
+# Docker volumes (Postgres data)
+pgdata/
+
+# ======================
+# OS / IDE
+# ======================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ======================
+# Logs
+# ======================
+*.log
+
+# ======================
+# Frontend (на будущее)
+# ======================
+node_modules/
+dist/

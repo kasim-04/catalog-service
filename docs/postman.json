@@ -1,0 +1,373 @@
+{
+  "info": {
+    "name": "Cinema Catalog API",
+    "description": "Postman collection for Cinema Catalog Service (FastAPI)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "admin_token",
+      "value": "supersecret123"
+    }
+  ],
+  "item": [
+    {
+      "name": "Movies",
+      "item": [
+        {
+          "name": "List movies",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/movies?page=1&size=10&sort=-rating",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "-rating"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search movies",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/movies?search=matrix",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "matrix"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Movies by genre",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/movies?genre_id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "genre_id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Movies by person",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/movies?person_id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "person_id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get movie by id",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/movies/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "movies",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Genres",
+      "item": [
+        {
+          "name": "List genres",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/genres",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "genres"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search genres",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/genres?search=drama",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "genres"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "drama"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Countries",
+      "item": [
+        {
+          "name": "List countries",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/countries",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "countries"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Persons",
+      "item": [
+        {
+          "name": "List persons",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/persons",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "persons"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search persons",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/persons?search=nolan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "persons"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "nolan"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Movies",
+          "item": [
+            {
+              "name": "Create movie",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-Admin-Token",
+                    "value": "{{admin_token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/admin/movies",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "movies"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Avatar\",\n  \"description\": \"Epic sci-fi\",\n  \"release_year\": 2009,\n  \"rating\": 8.5,\n  \"genre_ids\": [1],\n  \"country_ids\": [1],\n  \"person_ids\": [1]\n}"
+                }
+              }
+            },
+            {
+              "name": "Update movie",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-Admin-Token",
+                    "value": "{{admin_token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/admin/movies/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "movies",
+                    "1"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Avatar (Updated)\",\n  \"description\": \"Updated description\",\n  \"release_year\": 2009,\n  \"rating\": 9.0,\n  \"genre_ids\": [1],\n  \"country_ids\": [1],\n  \"person_ids\": [1]\n}"
+                }
+              }
+            },
+            {
+              "name": "Delete movie",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-Admin-Token",
+                    "value": "{{admin_token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/api/admin/movies/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "movies",
+                    "1"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
