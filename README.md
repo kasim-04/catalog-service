@@ -64,7 +64,7 @@ docker compose up --build
 
 | Назначение | URL |
 |-----------|-----|
-| API | http://localhost:8000 |
+| API | http://localhost:3000 |
 | Swagger UI | http://localhost:8000/docs |
 
 ---
